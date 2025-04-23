@@ -1,0 +1,123 @@
+.graph-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px); 
+  animation: overlay-entrance 0.3s ease-out;
+}
+
+@keyframes overlay-entrance {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.graph-container {
+  position: relative;
+  background: #222;
+  padding: 25px 15px 15px; 
+  border-radius: 20px;
+  width: 95%;
+  max-width: 380px;
+  max-height: 90vh;  
+  box-sizing: border-box;
+  color: white;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(255, 255, 255, 0.1); 
+  animation: container-scale 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+@keyframes container-scale {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cancel-btn {
+  position: absolute;
+  top: clamp(15px, 3.5vh, 20px); 
+  right: clamp(15px, 3.5vh, 20px); 
+  width: clamp(26px, 8vw, 34px);
+  height: clamp(26px, 8vw, 34px);
+  background: #ff4444;
+  color: white;
+  border: none;
+  font-size: clamp(14px, 4.5vw, 20px);
+  z-index: 2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 8px rgba(255, 0, 0, 0.3); 
+  transition: 
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background: #ff0000;
+  transform: scale(1.15) translateY(-2px);
+}
+
+.graph-content {
+  width: 100%;
+  height: 400px;
+  max-height: 70vh; 
+  background: #333;
+  border-radius: 10px;
+  
+  overflow: hidden;
+  position: relative;
+  margin-top: 12px; 
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+
+@media (max-height: 700px) and (min-aspect-ratio: 9/16) {
+  .graph-content {
+    height: 65vh;
+    max-height: 65vh;
+  }
+  .graph-container {
+    padding: 18px 12px 12px;
+  }
+}
+
+
+@media (min-aspect-ratio: 4/3) {
+  .graph-container {
+    max-width: 500px;
+    max-height: 80vh;
+  }
+  .graph-content {
+    height: 68vh;
+  }
+}
+
+
+.graph-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: graph-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes graph-glow {
+  from { box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05); }
+  to { box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.1); }
+}

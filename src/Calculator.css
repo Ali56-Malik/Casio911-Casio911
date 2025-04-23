@@ -1,0 +1,247 @@
+
+.calculatorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mainView {
+  padding: 15px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 95%; 
+  max-width: 380px; 
+  box-sizing: border-box;
+}
+
+
+.textInputContainer {
+  margin-top: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #D3EBD3;
+  border-radius: 10px;
+  padding: 0;
+  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.textInput,
+.answerTextArea {
+  width: 100%;
+  height: 55px;
+  background-color: transparent;
+  padding: 10px;
+  font-size: clamp(14px, 4vw, 16px); 
+  resize: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.answerTextArea {
+  text-align: right;
+  direction: ltr;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  margin: 0;
+}
+
+
+.modeContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.graphBtn {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: clamp(10px, 3vw, 12px); 
+  height: 32px;
+  width: 20%; 
+}
+
+.modeBtn {
+  background-color: rgb(56, 23, 42);
+  color: white;
+  border: none;
+  border-radius: 80px;
+  cursor: pointer;
+  width: 20%; 
+  height: 22px;
+  font-size: clamp(8px, 2.5vw, 11px);
+  font-weight: bold;
+}
+
+.modeBtn3 {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 80px;
+  cursor: pointer;
+  width: 20%; 
+  height: 22px;
+  font-size: clamp(8px, 2.5vw, 11px); 
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.upperGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(40px, 1fr));
+  grid-template-rows: repeat(5, minmax(20px, auto));
+  gap: 4px; 
+  margin-top: 10px;
+}
+
+.upperGrid button:nth-child(6) {
+  visibility: hidden;
+}
+
+.upperGrid .calcBtn,
+.upperGrid .arrowBtn,
+.upperGrid .shiftBtn,
+.upperGrid .alphaBtn {
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: clamp(10px, 3vw, 14px); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  height: 25px;
+}
+
+.modeBtn1 {
+  background-color: #D9D9D9;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: clamp(10px, 3vw, 12px); 
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  height: 25px;
+}
+
+.arrowBtn1 {
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: clamp(10px, 3vw, 12px); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%; 
+  height: 25px;
+}
+
+.upperGrid .shiftBtn {
+  background-color: yellow;
+}
+
+.upperGrid .alphaBtn {
+  background-color: #6792E9;
+}
+
+.upperGrid .arrowBtn {
+  background-color: #D9D9D9;
+}
+
+.upperGrid .icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  background: transparent;
+}
+
+.upperGrid .label {
+  color: white;
+  font-size: clamp(8px, 2.5vw, 12px); 
+  margin-bottom: 2px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+/* Lower Grid */
+.lowerGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(40px, 1fr)); 
+  grid-template-rows: repeat(4, minmax(30px, auto));
+  gap: 4px; 
+  align-items: center;
+}
+
+.lowerGrid .numberBtn,
+.lowerGrid .operatorBtn,
+.lowerGrid .deleteBtn,
+.lowerGrid .clearBtn,
+.lowerGrid .equalsBtn {
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: clamp(10px, 3vw, 13px);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 34px;
+}
+
+.lowerGrid .deleteBtn,
+.lowerGrid .clearBtn {
+  background-color: #E07D31;
+  color: white;
+}
+
+.lowerGrid .operatorBtn {
+  background-color: #D9D9D9;
+}
+
+.lowerGrid .equalsBtn {
+  background-color: #D9D9D9;
+}
+
+
+.label1 {
+  font-size: clamp(8px, 2.5vw, 10px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+  line-height: 1;
+}
+
+.label3 {
+  color: white;
+  font-size: clamp(8px, 2.5vw, 12px);
+  margin-bottom: 2px;
+  text-align: center;
+  margin-right: 5px;
+}
